@@ -88,41 +88,65 @@ export function Footer() {
               Контакты
             </span>
             <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
-              <li>г. Москва, ул. Примерная, 1</li>
-              <li>+7 (XXX) XXX-XX-XX</li>
-              <li>info@intex-sb.ru</li>
+              <li>660020, Красноярский край,</li>
+              <li>г. Красноярск, ул. Петра Подзолкова, д. 3</li>
+              <li>
+                <a href="tel:+79079722833" className="transition-colors hover:text-foreground">
+                  +7 (907) 972-28-33
+                </a>
+              </li>
+              <li>
+                <a href="mailto:ohrana.krs@mail.ru" className="transition-colors hover:text-foreground">
+                  ohrana.krs@mail.ru
+                </a>
+              </li>
             </ul>
           </div>
 
           <div>
             <span className="font-mono text-xs uppercase tracking-wider text-muted-foreground">
-              Время работы
+              Реквизиты
             </span>
-            <p className="mt-4 text-sm text-muted-foreground">
-              Пн — Пт: 09:00 — 19:00
-            </p>
-            <p className="mt-1 text-sm text-primary">24/7 Аварийная служба</p>
+            <ul className="mt-4 space-y-1 text-sm text-muted-foreground">
+              <li>ООО «ИНТЕКС-СБ»</li>
+              <li>ОГРН: 1252400014657</li>
+              <li>ИНН: 2466303170</li>
+              <li>КПП: 246601001</li>
+              <li>ОКПО: 76776890</li>
+            </ul>
+            <p className="mt-3 text-sm text-primary">Пн — Пт: 09:00 — 19:00</p>
           </div>
         </div>
 
         {/* Bottom Bar */}
         <div className="mt-16 flex flex-col items-center justify-between gap-4 border-t border-border pt-8 md:flex-row">
           <p className="font-mono text-xs text-muted-foreground">
-            © 2026 ООО «Интекс-СБ». Все права защищены.
+            © 2026 ООО «ИНТЕКС-СБ». Все права защищены.
           </p>
-          <div className="flex items-center gap-6">
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
             <a
-              href="#"
+              href="/policy-personal-data"
               className="font-mono text-xs text-muted-foreground transition-colors hover:text-foreground"
             >
-              Политика конфиденциальности
+              Политика обработки персональных данных
             </a>
             <a
-              href="#"
+              href="/withdraw-consent"
               className="font-mono text-xs text-muted-foreground transition-colors hover:text-foreground"
             >
-              Карта сайта
+              Отзыв согласия
             </a>
+            <button
+              type="button"
+              onClick={() => {
+                if (typeof window !== "undefined") {
+                  window.dispatchEvent(new Event("open-cookie-settings"))
+                }
+              }}
+              className="font-mono text-xs text-muted-foreground transition-colors hover:text-foreground"
+            >
+              Управление cookie
+            </button>
           </div>
         </div>
       </div>

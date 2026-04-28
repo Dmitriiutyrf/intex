@@ -82,11 +82,11 @@ export function Navigation() {
 
           <div className="flex items-center gap-4">
             <a
-              href="tel:+7XXXXXXXXXX"
+              href="tel:+79079722833"
               className="hidden items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-2 font-mono text-xs text-primary transition-all hover:bg-primary hover:text-primary-foreground sm:flex"
             >
               <Phone className="h-3.5 w-3.5" />
-              <span>Звонок</span>
+              <span>+7 (907) 972-28-33</span>
             </a>
             <button
               onClick={() => setIsMenuOpen(true)}

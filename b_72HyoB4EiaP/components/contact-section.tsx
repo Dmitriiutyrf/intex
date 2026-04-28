@@ -16,6 +16,8 @@ export function ContactSection() {
     email: "",
     message: "",
   })
+  const [consent, setConsent] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle")
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -41,7 +43,13 @@ export function ContactSection() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    // Handle form submission
+    if (!consent) {
+      setSubmitStatus("error")
+      return
+    }
+    // Handle form submission — здесь имитация успешной отправки.
+    // На бэке: сохранять согласие (дата, IP, хэш текста согласия).
+    setSubmitStatus("success")
   }
 
   return (
@@ -82,7 +90,11 @@ export function ContactSection() {
                   <span className="font-mono text-xs uppercase tracking-wider text-muted-foreground">
                     Адрес
                   </span>
-                  <p className="mt-1 font-medium">г. Москва, ул. Примерная, 1</p>
+                  <p className="mt-1 font-medium">
+                    660020, Красноярский край,
+                    <br />
+                    г. Красноярск, ул. Петра Подзолкова, д. 3
+                  </p>
                 </div>
               </div>
 
@@ -94,8 +106,16 @@ export function ContactSection() {
                   <span className="font-mono text-xs uppercase tracking-wider text-muted-foreground">
                     Связь
                   </span>
-                  <p className="mt-1 font-medium">+7 (XXX) XXX-XX-XX</p>
-                  <p className="text-sm text-muted-foreground">info@intex-sb.ru</p>
+                  <p className="mt-1 font-medium">
+                    <a href="tel:+79079722833" className="transition-colors hover:text-primary">
+                      +7 (907) 972-28-33
+                    </a>
+                  </p>
+                  <p className="text-sm text-muted-foreground">
+                    <a href="mailto:ohrana.krs@mail.ru" className="transition-colors hover:text-foreground">
+                      ohrana.krs@mail.ru
+                    </a>
+                  </p>
                 </div>
               </div>
 
@@ -208,9 +228,52 @@ export function ContactSection() {
                 </div>
               </div>
 
+              <label className="mt-6 flex cursor-pointer items-start gap-3 text-sm text-muted-foreground">
+                <input
+                  type="checkbox"
+                  checked={consent}
+                  onChange={(e) => {
+                    setConsent(e.target.checked)
+                    if (e.target.checked && submitStatus === "error") {
+                      setSubmitStatus("idle")
+                    }
+                  }}
+                  className="mt-1 h-4 w-4 shrink-0 cursor-pointer accent-primary"
+                  required
+                  aria-required="true"
+                />
+                <span className="leading-relaxed">
+                  Я даю согласие на обработку персональных данных в соответствии с{" "}
+                  <a
+                    href="/policy-personal-data"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-primary underline-offset-4 hover:underline"
+                  >
+                    Политикой обработки персональных данных
+                  </a>
+                  . Отметьте для отправки формы.
+                </span>
+              </label>
+
+              {submitStatus === "error" && (
+                <p
+                  role="alert"
+                  className="mt-3 text-sm text-destructive"
+                >
+                  Для отправки заявки необходимо согласие на обработку персональных данных.
+                </p>
+              )}
+              {submitStatus === "success" && (
+                <p role="status" className="mt-3 text-sm text-primary">
+                  Заявка отправлена. Мы свяжемся с вами в ближайшее время.
+                </p>
+              )}
+
               <button
                 type="submit"
-                className="group mt-6 flex w-full items-center justify-center gap-3 rounded-xl bg-primary px-8 py-4 font-mono text-sm uppercase tracking-wider text-primary-foreground transition-all hover:bg-primary/90"
+                disabled={!consent}
+                className="group mt-6 flex w-full items-center justify-center gap-3 rounded-xl bg-primary px-8 py-4 font-mono text-sm uppercase tracking-wider text-primary-foreground transition-all hover:bg-primary/90 disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:bg-primary"
               >
                 <span>Отправить запрос</span>
                 <Send className="h-4 w-4 transition-transform group-hover:translate-x-1" />
