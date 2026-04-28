@@ -129,6 +129,16 @@ export function Footer() {
               <li>ИНН: 2466303170</li>
               <li>КПП: 246601001</li>
               <li>ОКПО: 76776890</li>
+              <li className="pt-2">
+                <a
+                  href="https://digital.mchs.gov.ru/fgpn/license/24-06-2025-003375"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 text-primary transition-colors hover:text-primary/80"
+                >
+                  📜 Лицензия МЧС
+                </a>
+              </li>
             </ul>
             <p className="mt-3 text-sm text-primary">Пн — Пт: 09:00 — 19:00</p>
           </div>
@@ -140,6 +150,14 @@ export function Footer() {
             © 2026 ООО «ИНТЕКС-СБ». Все права защищены.
           </p>
           <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
+            <a
+              href="https://digital.mchs.gov.ru/fgpn/license/24-06-2025-003375"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-mono text-xs text-primary transition-colors hover:text-primary/80"
+            >
+              Лицензия МЧС
+            </a>
             <a
               href="/policy-personal-data"
               className="font-mono text-xs text-muted-foreground transition-colors hover:text-foreground"
