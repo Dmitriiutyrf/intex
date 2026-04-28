@@ -143,7 +143,7 @@ export function Hero() {
       <div className="relative z-10 mx-auto flex w-full max-w-7xl flex-wrap items-center justify-center gap-2 md:gap-3 lg:justify-start">
         {[
           { icon: MapPin, text: "Красноярск" },
-          { icon: Shield, text: "Лицензия МЧС" },
+          { icon: Shield, text: "Лицензия МЧС", href: "https://digital.mchs.gov.ru/fgpn/license/24-06-2025-003375" },
           { icon: Zap, text: "Полный цикл" },
           { icon: Clock, text: "24/7" },
         ].map((badge, i) => (
@@ -152,7 +152,18 @@ export function Hero() {
             className="glass flex items-center gap-2 rounded-full px-3 py-1.5 md:px-4 md:py-2"
           >
             <badge.icon className="h-3 w-3 text-primary md:h-3.5 md:w-3.5" />
-            <span className="font-mono text-[10px] uppercase tracking-wider md:text-xs">{badge.text}</span>
+            {badge.href ? (
+              <a
+                href={badge.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-mono text-[10px] uppercase tracking-wider transition-colors hover:text-primary md:text-xs"
+              >
+                {badge.text}
+              </a>
+            ) : (
+              <span className="font-mono text-[10px] uppercase tracking-wider md:text-xs">{badge.text}</span>
+            )}
           </div>
         ))}
       </div>
