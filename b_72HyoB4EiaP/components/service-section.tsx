@@ -80,16 +80,7 @@ export function ServiceSection({
         )
       }
 
-      // Parallax number
-      gsap.to(`.parallax-number-${id}`, {
-        y: -100,
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top bottom",
-          end: "bottom top",
-          scrub: true,
-        },
-      })
+
     }, sectionRef)
 
     return () => ctx.revert()
@@ -101,21 +92,13 @@ export function ServiceSection({
       id={id}
       className="relative min-h-screen overflow-hidden px-6 py-32 lg:px-8"
     >
-      {/* Background Number */}
-      <div
-        className={`parallax-number-${id} pointer-events-none absolute -right-32 top-1/4 select-none font-display text-[10rem] font-bold leading-none text-${accentColor}/[0.05] md:text-[14rem]`}
-      >
-        {pageNumber}
-      </div>
+
 
       <div className="mx-auto max-w-7xl">
         {/* Header */}
         <div className="mb-16 flex items-start justify-between">
           <div>
-            <span className="font-mono text-xs uppercase tracking-wider text-muted-foreground">
-              Стр. {pageNumber}
-            </span>
-            <div className="mt-2 overflow-hidden">
+            <div className="overflow-hidden">
               <h2
                 ref={titleRef}
                 className="font-display text-4xl font-bold tracking-tight md:text-5xl"
