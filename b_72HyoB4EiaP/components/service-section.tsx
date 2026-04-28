@@ -103,7 +103,7 @@ export function ServiceSection({
     >
       {/* Background Number */}
       <div
-        className={`parallax-number-${id} pointer-events-none absolute -right-10 top-0 select-none font-display text-[20rem] font-bold leading-none text-${accentColor}/[0.03] md:text-[30rem]`}
+        className={`parallax-number-${id} pointer-events-none absolute -right-32 top-1/4 select-none font-display text-[10rem] font-bold leading-none text-${accentColor}/[0.05] md:text-[14rem]`}
       >
         {pageNumber}
       </div>
@@ -118,7 +118,7 @@ export function ServiceSection({
             <div className="mt-2 overflow-hidden">
               <h2
                 ref={titleRef}
-                className="font-display text-5xl font-bold tracking-tight md:text-7xl"
+                className="font-display text-4xl font-bold tracking-tight md:text-5xl"
               >
                 {title}
               </h2>
