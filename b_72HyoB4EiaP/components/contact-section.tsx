@@ -107,8 +107,8 @@ export function ContactSection() {
                     Связь
                   </span>
                   <p className="mt-1 font-medium">
-                    <a href="tel:+79079722833" className="transition-colors hover:text-primary">
-                      +7 (907) 972-28-33
+                    <a href="tel:+79069722833" className="transition-colors hover:text-primary">
+                      +7 (906) 972-28-33
                     </a>
                   </p>
                   <p className="text-sm text-muted-foreground">
@@ -116,6 +116,30 @@ export function ContactSection() {
                       ohrana.krs@mail.ru
                     </a>
                   </p>
+                </div>
+              </div>
+
+              <div className="group flex items-start gap-4">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-border bg-secondary/50 transition-colors group-hover:border-[#229ED9]/40 group-hover:bg-[#229ED9]/10">
+                  <svg viewBox="0 0 24 24" className="h-5 w-5 text-[#229ED9]" fill="currentColor" aria-hidden="true">
+                    <path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z" />
+                  </svg>
+                </div>
+                <div>
+                  <span className="font-mono text-xs uppercase tracking-wider text-muted-foreground">
+                    Telegram
+                  </span>
+                  <p className="mt-1 font-medium">
+                    <a
+                      href="https://t.me/+79069722833"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="transition-colors hover:text-[#229ED9]"
+                    >
+                      Написать в Telegram
+                    </a>
+                  </p>
+                  <p className="text-sm text-muted-foreground">Ответим в рабочее время</p>
                 </div>
               </div>
 
@@ -130,6 +154,28 @@ export function ContactSection() {
                   <p className="mt-1 font-medium">Пн — Пт: 09:00 — 19:00</p>
                 </div>
               </div>
+            </div>
+
+            {/* Quick action buttons */}
+            <div className="grid grid-cols-2 gap-3">
+              <a
+                href="tel:+79069722833"
+                className="group flex items-center justify-center gap-2 rounded-2xl bg-primary px-5 py-3.5 font-mono text-xs uppercase tracking-wider text-primary-foreground shadow-[0_10px_30px_oklch(0.72_0.22_35_/_0.25)] transition-all hover:scale-[1.02] hover:bg-primary/90"
+              >
+                <Phone className="h-4 w-4" />
+                Позвонить
+              </a>
+              <a
+                href="https://t.me/+79069722833"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center justify-center gap-2 rounded-2xl border border-[#229ED9]/30 bg-[#229ED9]/10 px-5 py-3.5 font-mono text-xs uppercase tracking-wider text-[#229ED9] transition-all hover:scale-[1.02] hover:bg-[#229ED9] hover:text-white"
+              >
+                <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor" aria-hidden="true">
+                  <path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z" />
+                </svg>
+                Telegram
+              </a>
             </div>
 
             {/* Quick Links */}

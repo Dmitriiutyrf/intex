@@ -46,9 +46,12 @@ export function Footer() {
         {/* Large Branding */}
         <div ref={textRef} className="mb-16 overflow-hidden">
           <h2 className="font-display text-[clamp(3rem,12vw,10rem)] font-bold leading-[0.85] tracking-tighter">
-            <span className="text-gradient">ИНТЕКС</span>
+            <span className="text-gradient drop-shadow-[0_0_40px_oklch(0.72_0.22_35_/_0.25)]">ИНТЕКС</span>
             <span className="text-muted-foreground">-СБ</span>
           </h2>
+          <p className="mt-4 max-w-xl font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground">
+            Безопасность · Слаботочка · Электрика · Проектирование
+          </p>
         </div>
 
         {/* Footer Content */}
@@ -91,8 +94,21 @@ export function Footer() {
               <li>660020, Красноярский край,</li>
               <li>г. Красноярск, ул. Петра Подзолкова, д. 3</li>
               <li>
-                <a href="tel:+79079722833" className="transition-colors hover:text-foreground">
-                  +7 (907) 972-28-33
+                <a href="tel:+79069722833" className="transition-colors hover:text-foreground">
+                  +7 (906) 972-28-33
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://t.me/+79069722833"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 transition-colors hover:text-[#229ED9]"
+                >
+                  <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="currentColor" aria-hidden="true">
+                    <path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z" />
+                  </svg>
+                  Telegram
                 </a>
               </li>
               <li>

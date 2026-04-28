@@ -80,17 +80,29 @@ export function Navigation() {
             ))}
           </div>
 
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2 sm:gap-3">
             <a
-              href="tel:+79079722833"
+              href="https://t.me/+79069722833"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Написать в Telegram"
+              className="hidden h-9 w-9 items-center justify-center rounded-full border border-border bg-secondary/40 text-[#229ED9] transition-all hover:border-[#229ED9]/50 hover:bg-[#229ED9]/10 sm:flex"
+            >
+              <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor" aria-hidden="true">
+                <path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z" />
+              </svg>
+            </a>
+            <a
+              href="tel:+79069722833"
               className="hidden items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-2 font-mono text-xs text-primary transition-all hover:bg-primary hover:text-primary-foreground sm:flex"
             >
               <Phone className="h-3.5 w-3.5" />
-              <span>+7 (907) 972-28-33</span>
+              <span>+7 (906) 972-28-33</span>
             </a>
             <button
               onClick={() => setIsMenuOpen(true)}
               className="flex h-10 w-10 items-center justify-center rounded-full border border-border transition-colors hover:bg-secondary lg:hidden"
+              aria-label="Открыть меню"
             >
               <Menu className="h-5 w-5" />
             </button>
@@ -125,6 +137,26 @@ export function Navigation() {
                 {link.label}
               </a>
             ))}
+          </div>
+          <div className="menu-item flex items-center justify-center gap-3 px-6 pb-10">
+            <a
+              href="tel:+79069722833"
+              className="flex flex-1 items-center justify-center gap-2 rounded-full bg-primary px-5 py-3 font-mono text-xs uppercase tracking-wider text-primary-foreground"
+            >
+              <Phone className="h-4 w-4" />
+              Позвонить
+            </a>
+            <a
+              href="https://t.me/+79069722833"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex flex-1 items-center justify-center gap-2 rounded-full bg-[#229ED9] px-5 py-3 font-mono text-xs uppercase tracking-wider text-white"
+            >
+              <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor" aria-hidden="true">
+                <path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z" />
+              </svg>
+              Telegram
+            </a>
           </div>
         </div>
       )}
