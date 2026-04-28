@@ -97,7 +97,7 @@ export function Navigation() {
               className="hidden items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-2 font-mono text-xs text-primary transition-all hover:bg-primary hover:text-primary-foreground sm:flex"
             >
               <Phone className="h-3.5 w-3.5" />
-              <span>+7 (906) 972-28-33</span>
+              <span>Звонок: +7 (906) 972-28-33</span>
             </a>
             <button
               onClick={() => setIsMenuOpen(true)}
